@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Godofredo's foro</title>
+    <link rel="icon" href="./logo/hacker.png" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Agrega Font Awesome -->
+    <script>
+        // Deshabilita el menú contextual (clic derecho)
+        document.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+        });
+
+        // Deshabilita teclas como F12, Ctrl+Shift+I, Ctrl+U
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "F12") {
+                event.preventDefault();
+            }
+            if (event.ctrlKey && event.shiftKey && event.key === "I") {
+                event.preventDefault();
+            }
+            if (event.ctrlKey && event.key === "u") {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('header nav');
+            menu.classList.toggle('show'); // Cambiar la clase para mostrar/ocultar el menú
+        }
+    </script>
+    <script type="module" src="./authHandler.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="contenedor-general">
+            <p class="logo">
+                <img src="./logo/LOGO-GODO-AZUL.png" alt="Logo de GodoFredo"
+                    style="width: 70px; height: 70px; vertical-align: middle;">
+                GodoFredo's
+            </p>
+
+            <!-- Ícono de menú hamburguesa -->
+            <div class="menu-hamburguesa" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav id="menu-principal">
+                <a href="/index.html">Inicio</a>
+                <a href="./aboutus/aboutus.html">Sobre Nosotros</a>
+                <a id="login-link" href="./login/login.html">Iniciar sesión</a>
+                <a id="register-link" href="./Register/register.html">Registrarse</a>
+                <div id="profile-container" style="display: none;">
+                    <a id="profile-link" href="./profile/profile.html">Mi Perfil</a>
+                    <button id="logout-button" onclick="logout()"
+                        style="background: transparent; border: none; cursor: pointer;">
+                        <i class="fas fa-sign-out-alt" style="font-size: 20px; color: #caeef8;"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="banner-bienvenida-web">
+        <!-- Video de fondo -->
+        <video autoplay muted loop id="video-banner">
+            <source src="./img/videoplayback.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+        <div class="contenido-banner">
+            <h1 class="scroll-animation">Visita nuestro foro <br>con los Mejores repositórios</h1>
+            <a href="#servicios-de-godofredo">
+                <button class="scroll-animation"><b>¡Descubre nuestros servicios!</b></button>
+            </a>
+        </div>
+    </section>
+
+    <section id="servicios-de-godofredo" class="scroll-animation">
+        <div class="contenedor-general">
+            <h2>¡Elige un tema!</h2>
+            <div class="servicios">
+                <a href="./docker/docker.html" class="carta">
+                    <h3>Docker</h3>
+                    <img src="./img/docker-img.png" alt="">
+                </a>
+                <a href="./HackingTools/HackingTools.html" class="carta">
+                    <h3>Hacking tools</h3>
+                    <img src="./img/hackinkg-tools.png" alt="">
+                </a>
+                <a href="./descarga-iso/iso.html" class="carta">
+                    <h3>ISO files</h3>
+                    <img src="./img/iso-removebg-preview.png" alt="">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="contenedor-general">
+            <p>&copy; Godofredo's 2024</p>
+        </div>
+    </footer>
+
+    <script>
+        // Verifica el estado de la sesión al cargar la página
+        document.addEventListener('DOMContentLoaded', function () {
+            const isLoggedIn = localStorage.getItem('isLoggedIn'); // Obtiene el estado de la sesión
+
+            if (isLoggedIn === 'true') {
+                document.getElementById('profile-container').style.display = 'flex'; // Muestra el contenedor del perfil
+                document.getElementById('login-link').style.display = 'none';
+                document.getElementById('register-link').style.display = 'none';
+            }
+        });
+
+
+        // Función para manejar el cierre de sesión
+        function logout() {
+            // Llama a la función de logout del archivo authHandler.js
+            import('./authHandler.js').then(module => {
+                module.logout();  // Llama la función logout importada
+            });
+        }
+
+        // Función para observar elementos en el viewport
+        document.addEventListener('DOMContentLoaded', function () {
+            const elements = document.querySelectorAll('.scroll-animation');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

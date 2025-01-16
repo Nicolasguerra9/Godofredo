@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    margin: 0;
+}
+
+/* Estilos generales */
+* {
+    font-family: 'Lexend Deca', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+  
+html, body {
+    width: 100%;
+    height: 100%;
+    color: #caeef8; /* Blanco */
+    position: relative; /* Necesario para posicionar el video */
+}
+
+/* Video de fondo */
+#bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+form {
+    position: relative;
+    width: 70vw;
+    max-width: 500px;
+    background: rgba(24, 120, 216, 0.6); /* Fondo semitransparente */
+    padding: 2rem;
+    border-radius: 10px;
+    overflow: hidden;
+    color: #caeef8; /* Blanco */
+}
+
+/* Inputs y botones */
+input,
+button {
+    display: block;
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+    color: #caeef8;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.75);
+    border-radius: 5px;
+    transition: 0.4s ease;
+}
+
+input::placeholder {
+    color: #041d49;
+}
+
+input:focus {
+    border-color: #111;
+    outline: none;
+}
+
+button {
+    background-color: #041d49;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #caeef8;
+    color: #041d49;
+}
+
+.label-text {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+}
+
+.tip {
+    text-align: right;
+    color: #041d49;
+    font-size: 0.75rem;
+    margin-top: -1rem;
+    margin-bottom: 1rem;
+}
+
+/* Estilos adicionales */
+.logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 50px;
+    margin: 0;
+    color: #caeef8;
+}
+
+/* Estilo del botón de cierre */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #041d49;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+.close-btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.close-btn i {
+    font-size: 24px;
+}
+
+.link {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.link a {
+    color: #caeef8; /* Link color */
+    text-decoration: none;
+}
+
+.link a:hover {
+    text-decoration: underline;
+    color: #caeef8; /* Hover color for links */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    form {
+        width: 90vw; /* Increases form width on smaller screens */
+        padding: 1.5rem; /* Reduces padding */
+    }
+
+    /* Adjust the logo size */
+    .logo {
+        width: 80px; /* Smaller logo */
+    }
+
+    /* Adjust the heading size */
+    h1 {
+        font-size: 30px; /* Smaller heading */
+    }
+
+    /* Adjust button and input size */
+    input, button {
+        padding: 0.6rem;
+        font-size: 0.9rem; /* Smaller text */
+    }
+
+    .label-text {
+        font-size: 0.8rem; /* Smaller label text */
+    }
+
+    .tip {
+        font-size: 0.7rem; /* Smaller tip text */
+    }
+
+    /* Close button adjustments */
+    .close-btn {
+        font-size: 20px;
+        top: 5px;
+        right: 5px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    form {
+        width: 95vw; /* Almost full width */
+    }
+
+    .logo {
+        width: 60px; /* Even smaller logo */
+    }
+
+    h1 {
+        font-size: 24px; /* Further reduced heading size */
+    }
+
+    input, button {
+        font-size: 0.8rem; /* Smaller button/input text */
+    }
+
+    .label-text {
+        font-size: 0.7rem; /* Smaller labels */
+    }
+
+    .tip {
+        font-size: 0.65rem; /* Even smaller tip text */
+    }
+}

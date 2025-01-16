@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Tools</title>
+    <link rel="icon" href="../logo/hacker.png" type="image/x-icon">
+    <link rel="stylesheet" href="./docker.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="module" src="./docker.js"></script>
+
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('header nav');
+            menu.classList.toggle('show'); // Cambiar la clase para mostrar/ocultar el menú
+        }
+    </script>
+</head>
+
+<body>
+    <header>
+        <div class="contenedor-general">
+            <p class="logo">
+                <img src="../logo/LOGO-GODO-AZUL.png" alt="Logo de GodoFredo" style="width: 70px; height: 70px; vertical-align: middle;">
+                GodoFredo's
+            </p>
+            <div class="menu-hamburguesa" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav id="menu-principal">
+                <a href="../index.html">Inicio</a>
+                <a href="../aboutus/aboutus.html">Sobre Nosotros</a>
+                <a id="login-link" href="../login/login.html">Iniciar sesión</a>
+                <a id="register-link" href="../Register/register.html">Registrarse</a>
+                <div id="profile-container" style="display: none;">
+                    <a id="profile-link" href="../profile/profile.html">Mi Perfil</a>
+                    <button id="logout-button" onclick="logout()" style="background: transparent; border: none;">
+                        <i class="fas fa-sign-out-alt" style="font-size: 20px; color: #caeef8;"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section id="banner-bienvenida-web">
+        <video autoplay muted loop id="video-banner">
+            <source src="../img/videoplayback.mp4" type="video/mp4">
+            Tu navegador no soporta la etiqueta de video.
+        </video>
+        <div class="contenido-banner">
+            <h1 class="scroll-animation">Explora las Mejores Herramientas de Hacking</h1>
+            <a href="#hacking-tools" class="scroll-down-btn">
+                <i class="fas fa-chevron-down"></i>
+            </a>
+        </div>
+    </section>
+
+    <section id="hacking-tools" class="scroll-animation">
+        <div class="contenedor-general">
+            <h2>Herramientas Disponibles</h2>
+            <div class="tools">
+                <div class="tool">
+                    <img src="../img/w10.png" alt="Gobuster">
+                    <h3>Windows 10</h3>
+                    <button id="deploy-btn">Desplegar</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Verifica el estado de la sesión al cargar la página
+        document.addEventListener('DOMContentLoaded', function () {
+            const isLoggedIn = localStorage.getItem('isLoggedIn'); // Obtiene el estado de la sesión
+
+            if (isLoggedIn === 'true') {
+                document.getElementById('profile-container').style.display = 'flex'; // Muestra el contenedor del perfil
+                document.getElementById('login-link').style.display = 'none';
+                document.getElementById('register-link').style.display = 'none';
+            }
+        });
+
+
+        // Función para manejar el cierre de sesión
+        function logout() {
+            // Llama a la función de logout del archivo authHandler.js
+            import('./authHandler.js').then(module => {
+                module.logout();  // Llama la función logout importada
+            });
+        }
+
+        // Función para observar elementos en el viewport
+        document.addEventListener('DOMContentLoaded', function () {
+            const elements = document.querySelectorAll('.scroll-animation');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

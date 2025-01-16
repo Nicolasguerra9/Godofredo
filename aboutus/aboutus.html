@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About us</title>
+    <link rel="icon" href="../logo/hacker.png" type="image/x-icon">
+    <link rel="stylesheet" href="aboutus.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script type="module" src="./aboutus.js"></script>
+    <script>
+        // Deshabilita el menú contextual (clic derecho)
+        document.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+        });
+
+        // Deshabilita teclas como F12, Ctrl+Shift+I, Ctrl+U
+        document.addEventListener("keydown", function (event) {
+            if (event.key === "F12") {
+                event.preventDefault();
+            }
+            if (event.ctrlKey && event.shiftKey && event.key === "I") {
+                event.preventDefault();
+            }
+            if (event.ctrlKey && event.key === "u") {
+                event.preventDefault();
+            }
+        });
+    </script>
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('header nav');
+            menu.classList.toggle('show'); // Cambiar la clase para mostrar/ocultar el menú
+        }
+    </script>
+</head>
+
+<body>
+    <header class="scroll-animation">
+        <div class="contenedor-general">
+            <p class="logo">
+                <img src="../logo/LOGO-GODO-AZUL.png" alt="Logo de GodoFredo" style="width: 70px; height: 70px; vertical-align: middle;">
+                GodoFredo's
+            </p>
+            <div class="menu-hamburguesa" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <nav id="menu-principal" class="scroll-animation">
+                <a href="../index.html">Inicio</a>
+                <a href="aboutus.html">Sobre Nosotros</a>
+                <a id="login-link" href="../login/login.html">Iniciar sesión</a>
+                <a id="register-link" href="../Register/register.html">Registrarse</a>
+                <div id="profile-container" style="display: none;">
+                    <a id="profile-link" href="./profile/profile.html">Mi Perfil</a>
+                    <button id="logout-button" onclick="logout()" style="background: transparent; border: none; cursor: pointer;">
+                        <i class="fas fa-sign-out-alt" style="font-size: 20px; color: #caeef8;"></i>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Video de fondo con objetivos -->
+    <section id="banner-bienvenida-web" class="scroll-animation">
+        <video autoplay muted loop id="video-banner">
+            <source src="../img/videoplayback.mp4" type="video/mp4">
+        </video>
+        <div class="sobre-nosotros">
+            <h2>Objetivos</h2>
+            <p>Estamos creando una plataforma web similar a GitHub, pero totalmente enfocada en el campo de la ciberseguridad. Como equipo, nuestra misión es ofrecer un espacio donde los profesionales de la seguridad informática puedan colaborar, compartir herramientas, scripts y proyectos que aborden distintas áreas de ciberseguridad, desde la evaluación de vulnerabilidades hasta la automatización de auditorías.</p>
+            <br>
+            <br>
+            <p>Nuestro objetivo es proporcionar una herramienta que no solo centralice el desarrollo en ciberseguridad, sino que también fomente una colaboración más efectiva entre expertos y entusiastas de la seguridad informática. Al concentrar los recursos, herramientas y proyectos en un solo lugar, buscamos facilitar el acceso a soluciones innovadoras y prácticas que puedan ser utilizadas por toda la comunidad.</p>
+        </div>
+    </section>
+    
+
+    <!-- Beneficios clave -->
+    <section class="benefits-section scroll-animation">
+        <div class="contenedor-general">
+            <h3>¿Por qué elegir nuestra plataforma?</h3>
+            <div class="benefits-cards">
+                <div class="benefit-card">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Seguridad avanzada</h4>
+                    <p>Protege proyectos sensibles con tecnologías de última generación.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-book-reader"></i>
+                    <h4>Recursos centralizados</h4>
+                    <p>Accede a materiales educativos y herramientas de desarrollo en un solo lugar.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-users"></i>
+                    <h4>Colaboración</h4>
+                    <p>Trabaja en equipo con expertos del sector y comparte conocimientos.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Herramientas personalizadas</h4>
+                    <p>Utiliza herramientas diseñadas específicamente para auditorías y evaluaciones.</p>
+                </div>
+                <div class="benefit-card">
+                    <i class="fas fa-globe"></i>
+                    <h4>Comunidad activa</h4>
+                    <p>Forma parte de una comunidad que crece cada día, compartiendo innovaciones y soluciones.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+   
+    
+    <section class="seccion-sobre-nosotros scroll-animation">
+        <h2>Nuestro Equipo</h2>
+        <br>
+        <br>
+        <div class="recuadros-secundarios">
+           
+            <div class="recuadro scroll-animation">
+                <img src="../img/images.jpg" alt="Descripción de la imagen">
+                <h3>Adrià</h3>
+                <p>Proporcionar productos de alta calidad que impacten positivamente en la vida de nuestros clientes.</p>
+            </div>
+            <div class="recuadro scroll-animation">
+                <img src="../img/mclovin.jpg" alt="Descripción de la imagen">
+                <h3>Nicolas</h3>
+                <p>Convertirnos en referentes en el sector, destacándonos por nuestra dedicación y compromiso.</p>
+            </div>
+            <div class="recuadro scroll-animation">
+                <img src="../img/Seth_Superbad.jpg" alt="Descripción de la imagen">
+                <h3>Edward</h3>
+                <p>Integridad, innovación y atención al cliente son los pilares de nuestra filosofía.</p>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <footer class="scroll-animation">
+        <div class="contenedor-general">
+            <p>&copy; Godofredo's 2024</p>
+        </div>
+    </footer>
+
+    <script>
+        // Verifica el estado de la sesión al cargar la página
+        document.addEventListener('DOMContentLoaded', function () {
+            const isLoggedIn = localStorage.getItem('isLoggedIn'); // Obtiene el estado de la sesión
+
+            if (isLoggedIn === 'true') {
+                document.getElementById('profile-container').style.display = 'flex'; // Muestra el contenedor del perfil
+                document.getElementById('login-link').style.display = 'none';
+                document.getElementById('register-link').style.display = 'none';
+            }
+        });
+
+
+        // Función para manejar el cierre de sesión
+        function logout() {
+            // Llama a la función de logout del archivo authHandler.js
+            import('./authHandler.js').then(module => {
+                module.logout();  // Llama la función logout importada
+            });
+        }
+
+        // Función para observar elementos en el viewport
+        document.addEventListener('DOMContentLoaded', function () {
+            const elements = document.querySelectorAll('.scroll-animation');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    } else {
+                        entry.target.classList.remove('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil del Usuario</title>
+    <link rel="stylesheet" href="./profile.css">
+    <script type="module" src="./profile.js"></script>
+</head>
+
+<body>
+    <script type="module" src="../BBDD/firebaseConf.js"></script>
+    
+    <!-- Video de fondo -->
+    <video autoplay muted loop id="background-video">
+        <source src="../img/videoplayback.mp4" type="video/mp4">
+        Tu navegador no soporta el elemento de video.
+    </video>
+    <!-- Back to Menu button -->
+    <button id="back-to-menu-btn">Volver al menú</button>
+
+    <h1>Perfil del Usuario</h1>
+
+    <div id="user-profile">
+        <div class="profile-container">
+            <h2>Información Básica</h2>
+            <br>
+            <p>Email: <span id="email"></span></p>
+            <br>
+            <p>Nombre: <span id="name"></span> <span class="edit-icon" id="save-name-btn">✏️</span></p>
+            <br>
+            <p>Número de Teléfono: <span id="phone"></span> <span class="edit-icon" id="save-phone-btn">✏️</span></p>
+            <br>
+            <p>Calle: <span id="street"></span> <span class="edit-icon" id="save-street-btn">✏️</span></p>
+            <br>
+            <p>Sexo: <span id="gender"></span> <span class="edit-icon" id="save-gender-btn">✏️</span></p>
+        </div>
+    </div>
+
+
+
+    <section id="contenido-archivos">
+        <div class="contenedor-general">
+            <!-- Sección de subir archivos -->
+            <div id="subir-archivos" class="styled-container">
+                <h2>Subir Archivos</h2>
+                <input type="file" id="upload-btn" multiple>
+                <button id="upload-btn">Subir</button>
+            </div>
+    
+            <!-- Sección de archivos subidos -->
+            <div id="uploaded-files-container" class="styled-container">
+                <h2>Archivos Subidos</h2>
+                <div id="lista-archivos">
+                    <!-- Aquí se listarán los archivos subidos -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="change-password" class="password-section">
+        <h2>Cambiar Contraseña</h2>
+        <br>
+        <input type="password" id="old-password" placeholder="Contraseña antigua" required>
+        <input type="password" id="new-password" placeholder="Nueva contraseña" required>
+        <input type="password" id="confirm-new-password" placeholder="Confirmar nueva contraseña" required>
+        <button id="change-password-btn">Cambiar Contraseña</button>
+    </div>
+
+
+
+    <div id="delete-account" class="delete-section">
+        <h2>Eliminar Cuenta</h2>
+        <br>
+        <button id="delete-account-btn">Eliminar mi cuenta</button>
+    </div>
+
+    <!-- Modal para eliminar cuenta -->
+    <div id="delete-modal">
+        <div class="modal-content">
+            <h3>Confirmar Eliminación de Cuenta</h3>
+            <br>
+            <label for="delete-password">Introduce tu contraseña para confirmar:</label>
+            <input type="password" id="delete-password" placeholder="Contraseña" required />
+            <button id="confirm-delete-btn">Confirmar</button>
+            <button id="cancel-delete-btn">Cancelar</button>
+        </div>
+    </div>
+
+    
+
+</body>
+
+</html>

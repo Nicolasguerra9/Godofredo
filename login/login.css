@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+/* Estilos generales */
+* {
+  font-family: 'Lexend Deca', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Lexend Deca', sans-serif;
+  color: #caeef8; /* Blanco */
+  position: relative; /* Required for video positioning */
+}
+
+/* Video de fondo */
+#bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-container {
+  width: 70vw; /* Cambiado a 70vw */
+  max-width: 500px;
+  background: rgb(24,120,216, 0.6); /* Fondo semitransparente */
+  padding: 2rem;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative; /* Required for positioning the close icon */
+  color: #caeef8; /* Text color for the container */
+}
+
+input,
+button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  font-size: 1rem;
+  color: #caeef8;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.75); /* Cambiado a color semitransparente */
+  border-radius: 5px;
+  transition: 0.4s ease;
+}
+
+input::placeholder {
+  color: #041d49; /* Color del placeholder */
+}
+
+input:focus {
+  border-color: #111; /* Color más claro del primario */
+  outline: none;
+}
+
+button {
+  background-color: #041d49; /* Color de fondo del botón */
+  cursor: pointer;
+  text-transform: uppercase;
+  font-size: 1.2rem; /* Ajustado al tamaño del texto */
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #caeef8;
+  color: #041d49; /* Color más oscuro en hover */
+}
+
+.label-text {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  letter-spacing: 0.05rem;
+}
+
+.tip {
+  text-align: right;
+  color: #041d49;
+  font-size: 0.75rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+/* Estilos adicionales para mejorar la estética */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra el logo y el texto */
+  margin-bottom: 20px; /* Espaciado entre el logo y el formulario */
+}
+
+.logo {
+  width: 100px; /* Ajusta el tamaño del logo según lo necesites */
+  height: auto; /* Mantiene la proporción del logo */
+  margin-left: -100px;
+  margin-right: 20px; /* Espacio entre el logo y el texto */
+}
+
+.login-text {
+  font-size: 24px; /* Ajusta el tamaño del texto */
+  font-weight: bold; /* Negrita para el texto */
+  margin-top: 10px; /* Espacio entre el logo y el texto */
+}
+
+h1 {
+  font-size: 50px; /* Ajusta el tamaño del texto */
+  margin: 0; /* Elimina márgenes por defecto */
+  color: #caeef8; /* Cambia el color del texto a blanco */
+}
+
+.link {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.link a {
+  color: #caeef8; /* Link color */
+  text-decoration: none;
+}
+
+.link a:hover {
+  text-decoration: underline;
+  color: #caeef8; /* Hover color for links */
+}
+
+.close-icon {
+  position: absolute; /* Position the icon absolutely */
+  top: 10px;         /* Adjust the top position */
+  right: 10px;       /* Adjust the right position */
+  font-size: 24px;   /* Icon size */
+  color: #041d49;        /* Change icon color to red */
+}
+
+.close-icon a {
+  text-decoration: none; /* No underline for the link */
+  color: #041d49;           /* Set link color to red */
+}
+
+/* Media Queries para hacer la página responsive */
+@media (max-width: 768px) {
+  .login-container {
+    width: 90vw; /* Aumenta el ancho en pantallas pequeñas */
+    padding: 1.5rem;
+  }
+
+  .logo {
+    width: 80px; /* Reduce el tamaño del logo */
+  }
+
+  .login-text {
+    font-size: 20px; /* Ajusta el tamaño del texto */
+  }
+
+  h1 {
+    font-size: 40px; /* Reduce el tamaño del encabezado */
+  }
+
+  input, button {
+    font-size: 0.9rem; /* Reduce el tamaño de los botones y inputs */
+  }
+
+  .close-icon {
+    font-size: 20px; /* Reduce el tamaño del icono */
+    top: 8px; /* Ajuste de la posición del icono */
+    right: 8px; /* Ajuste de la posición del icono */
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    width: 95vw; /* Aumenta el ancho para pantallas más pequeñas */
+    padding: 1rem;
+  }
+
+  .logo {
+    width: 60px; /* Reducción aún más del logo */
+  }
+
+  .login-text {
+    font-size: 18px; /* Ajusta el tamaño del texto */
+  }
+
+  h1 {
+    font-size: 35px; /* Ajusta el tamaño del encabezado */
+  }
+
+  input, button {
+    font-size: 0.8rem; /* Reduce el tamaño de los botones y inputs */
+  }
+
+  .close-icon {
+    font-size: 18px; /* Reduce el tamaño del icono */
+    top: 5px; /* Ajuste de la posición del icono */
+    right: 5px; /* Ajuste de la posición del icono */
+  }
+}
